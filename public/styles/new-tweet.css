@@ -1,0 +1,22 @@
+main.container {
+  width: 450px;
+  margin: auto;
+  background-color: white;
+  padding: 100px 30px
+}
+
+.container .new-tweet {
+  background-color: #eee;
+  border-radius: 10px;
+  border-color: #aaa;
+  padding: 10px;
+}
+
+.container h2 {
+  border-bottom: 1px solid;
+}
+
+.container textarea {
+  width: 100%;
+  display: block;
+}
