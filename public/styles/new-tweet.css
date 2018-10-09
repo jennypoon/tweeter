@@ -1,3 +1,7 @@
+input {
+  margin-top: 5px;
+}
+
 main.container {
   width: 450px;
   margin: auto;
@@ -7,16 +11,26 @@ main.container {
 
 .container .new-tweet {
   background-color: #eee;
-  border-radius: 10px;
-  border-color: #aaa;
+  border-radius: 5px;
+  border: 1px solid #aaa;
   padding: 10px;
 }
 
 .container h2 {
+  margin-top: 0;
   border-bottom: 1px solid;
 }
 
 .container textarea {
   width: 100%;
   display: block;
+  padding: 5px;
+}
+
+.container .counter {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 12px;
+  text-align: right;
+  float: right;
 }
