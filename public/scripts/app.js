@@ -98,14 +98,22 @@ $(function() {
 
     //Get Tweet Data
     let data = $(event.target).serialize()
-    console.log(data)
-
-    //Ajax Request
-    $.ajax('/tweets', {method: 'POST', data: data}).then(() => {
-      loadTweets();        // THPOILERTH !!!!
-      console.log("ajax went through!");
-
+    // console.log(data);
+    // console.log(data.length);
+    // console.log(data.value)
+    if (data.length >= 140) {
+      alert("Error: Over Character Limit");
+    }
+    else if (data.length === 5) {
+      alert("Error: No Input")
+    } else {
+      //Ajax Request
+      $.ajax('/tweets', {method: 'POST', data: data}).then(() => {
+        loadTweets();        // THPOILERTH !!!!
+        console.log("ajax POST went through!");
     });
+}
+
   });
 });
 
