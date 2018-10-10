@@ -34,3 +34,11 @@ main.container {
   text-align: right;
   float: right;
 }
+
+.container .countertxtover {
+  padding-top: 10px;
+  font-style: italic;
+  font-size: 12px;
+  color: red;
+  text-align: right;
+  float: right;
