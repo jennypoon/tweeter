@@ -16,18 +16,18 @@ main.container {
   padding: 10px;
 }
 
-.container h2 {
+.new-tweet h2 {
   margin-top: 0;
   border-bottom: 1px solid;
 }
 
-.container textarea {
+.new-tweet textarea {
   width: 100%;
   display: block;
   padding: 5px;
 }
 
-.container .counter {
+.new-tweet .counter {
   padding-top: 10px;
   font-style: italic;
   font-size: 12px;
@@ -35,7 +35,7 @@ main.container {
   float: right;
 }
 
-.container .countertxtover {
+.new-tweet .countertxtover {
   padding-top: 10px;
   font-style: italic;
   font-size: 12px;
