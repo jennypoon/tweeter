@@ -82,5 +82,42 @@ $(function() {
       $('#tweets-container').append($newTweet);
     }
   }
+
   renderTweets(data);
+
+  $('form').on('submit', (event) => {
+    event.preventDefault();
+
+    //Get Tweet Data
+    let data = $(event.target).serialize()
+    console.log(data)
+    //Ajax Request
+    $.ajax('/tweets', {method: 'POST', data: data}).then(() => {
+      $("<article>").empty()
+      console.log("ajax went through!")
+      renderTweets();
+    });
+
+
+
+
+  });
+
+
+
+
+// $('form').on('submit', (e) => {
+//     e.preventDefault();
+
+//     // 1. Capture data the user enetered
+//     let data = $(e.target).serialize();
+
+//     // 2. Submit using ajax
+//     $.ajax('/products', {method: 'POST', data: data}).then(() => {
+//       $('ul#product-list').empty();
+//       loadAndRenderProduct();
+//     });
+//   });
+
 });
+
