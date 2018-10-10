@@ -1,10 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-// Test / driver code (temporary). Eventually will get this from the server.
 const data = [
   {
     "user": {
@@ -55,41 +48,39 @@ const data = [
 
 $(function() {
 
-function createTweetElement(tweetData) {
-  const user = tweetData.user;
+  //==Creating New Tweets
+  function createTweetElement(tweetData) {
+    const user = tweetData.user;
 
-//create new tweet
-  let $tweet = $('<article>').addClass('tweet');
+  //create new tweet article
+    let $tweet = $('<article>').addClass('tweet');
 
-//create header
-  let $header = $("<header>");
-  let $headerAvatar = $(`<img src="${user.avatars.small}">`).addClass("avatar");
-  let $headerUsername = $("<h2>").addClass("username").append(user.name);
-  let $headerSpan = $("<h5>").addClass("handle").append(user.handle);
-  $header.append($headerAvatar).append($headerUsername).append($headerSpan);
+  //create header
+    let $header = $("<header>");
+    let $headerAvatar = $(`<img src="${user.avatars.small}">`).addClass("avatar");
+    let $headerUsername = $("<h2>").addClass("username").append(user.name);
+    let $headerSpan = $("<h5>").addClass("handle").append(user.handle);
+    $header.append($headerAvatar).append($headerUsername).append($headerSpan);
 
-//create body
-  let $tweetBody = $("<p>").addClass("tweetBody").append(tweetData.content.text);
+  //create body
+    let $tweetBody = $("<p>").addClass("tweetBody").append(tweetData.content.text);
 
-//create footer
-  let $footer = $("<footer>")
-  let $footerDate = $("<p>").addClass("tweetDate").append(tweetData.created_at);
-  $footer.append($footerDate);
-//append pieces
+  //create footer
+    let $footer = $("<footer>")
+    let $footerDate = $("<p>").addClass("tweetDate").append(tweetData.created_at);
+    $footer.append($footerDate);
 
-  return $tweet.append($header).append($tweetBody).append($footer);
+  //append pieces
+    return $tweet.append($header).append($tweetBody).append($footer);
 
-};
+  };
 
-function renderTweets(tweets) {
-  for (let i = 0; i < tweets.length; i++) {
-    let $newTweet = createTweetElement(tweets[i]);
-    $('#tweets-container').append($newTweet);
+  //==Loop Through Database to create tweets
+  function renderTweets(tweets) {
+    for (let i = 0; i < tweets.length; i++) {
+      let $newTweet = createTweetElement(tweets[i]);
+      $('#tweets-container').append($newTweet);
+    }
   }
-}
-
-
-renderTweets(data);
-
+  renderTweets(data);
 });
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
