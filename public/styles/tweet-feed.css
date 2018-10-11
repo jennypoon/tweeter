@@ -51,6 +51,7 @@ article.tweet footer p {
 article.tweet p {
   padding: 10px;
   font-size: 15px;
+  word-wrap: break-word;
 }
 
 article.tweet .avatar {
