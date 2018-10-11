@@ -16,7 +16,6 @@ main.container {
   padding: 10px;
 }
 
-
 .new-tweet h2 {
   margin-top: 0;
   border-bottom: 1px solid;
@@ -27,8 +26,6 @@ main.container {
   display: block;
   padding: 5px;
   resize: none;
-  word-wrap: break-word;
-}
 }
 
 .new-tweet .counter {
