@@ -72,7 +72,8 @@ $(function() {
   });
 });
 //Toggle New Tweet Section when Compose Button Pressed
-$("button").on("click", (function(){
+$("button").on("click", function() {
   $(".new-tweet").slideToggle();
-}));
+  $("textarea").focus();
+});
 
