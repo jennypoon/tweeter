@@ -1,3 +1,4 @@
+
 $(function() {
 
   //==Creating New Tweets
@@ -50,14 +51,14 @@ $(function() {
   $('form').on('submit', (event) => {
     event.preventDefault();
 
-  $('textarea[name=text]').val();
     //Get Tweet Data
+    let input = event.target.children[0].value;
     let data = $(event.target).serialize();
 
-    if (data.length >= 145) {
+
+    if (input.length >= 140) {
       alert("Error: Over Character Limit");
-    }
-    else if (data.length === 5) {
+    } else if (input.length === 0) {
       alert("Error: No Input")
     } else {
       //Ajax Request
@@ -65,8 +66,13 @@ $(function() {
         method: 'POST',
         data: data,
         success: loadTweets()
-        });        // THPOILERTH !!!!
+        });
         console.log("ajax POST went through!");
     }
   });
 });
+//Toggle New Tweet Section when Compose Button Pressed
+$("button").on("click", (function(){
+  $(".new-tweet").slideToggle();
+}));
+
