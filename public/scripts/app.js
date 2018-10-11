@@ -55,12 +55,12 @@ $(function() {
     let input = event.target.children[0].value;
     let data = $(event.target).serialize();
 
-
     if (input.length >= 140) {
-      alert("Error: Over Character Limit");
+      $('.error-msg').slideDown().html('Error - Over Character Limit');
     } else if (input.length === 0) {
-      alert("Error: No Input")
+      $('.error-msg').slideDown().html('Error - No Input');
     } else {
+    $('.error-msg').slideUp().html('Error - No Input')
       //Ajax Request
       $.ajax('/tweets', {
         method: 'POST',
@@ -70,7 +70,7 @@ $(function() {
         }
         });
       $("textarea[name='text']").val("");
-      $(".counter").text(140);
+      // $(".counter").text(140);
         console.log("ajax POST went through!");
     }
   });
