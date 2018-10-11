@@ -11,12 +11,12 @@ $(function() {
     //create header
     let $header = $("<header>");
     let $headerAvatar = $(`<img src="${user.avatars.small}">`).addClass("avatar");
-    let $headerUsername = $("<h2>").addClass("username").append(user.name);
-    let $headerSpan = $("<h5>").addClass("handle").append(user.handle);
+    let $headerUsername = $("<h2>").addClass("username").text(user.name);
+    let $headerSpan = $("<h5>").addClass("handle").text(user.handle);
     $header.append($headerAvatar).append($headerUsername).append($headerSpan);
 
     //create body
-    let $tweetBody = $("<p>").addClass("tweetBody").append(tweetData.content.text);
+    let $tweetBody = $("<p>").addClass("tweetBody").text(tweetData.content.text);
 
     //create footer
     let $footer = $("<footer>")
@@ -65,8 +65,12 @@ $(function() {
       $.ajax('/tweets', {
         method: 'POST',
         data: data,
-        success: loadTweets()
+        success: function(tweets) {
+          loadTweets(tweets)
+        }
         });
+      $("textarea[name='text']").val("");
+      $(".counter").text(140);
         console.log("ajax POST went through!");
     }
   });
