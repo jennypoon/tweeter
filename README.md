@@ -12,6 +12,7 @@ Whaler is a simple, single-page Twitter clone built using:
 
 ## Final Product
 !["Home Page"](https://github.com/jpoon15/tweeter/blob/master/public/images/HomePage.png)
+!["Hover over a Specifc Message"](https://github.com/jpoon15/tweeter/blob/master/public/images/Hover.png)
 !["Compose Message"](https://github.com/jpoon15/tweeter/blob/master/public/images/Compose.png)
 
 ## Dependencies
