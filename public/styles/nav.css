@@ -1,15 +1,16 @@
 #nav-bar {
-  height: 80px;
-  background-color: #00a087;
+  height: 120px;
+  background-color: #7BBAEA;
   color: #e8fdff;
   padding-left: 2em;
   padding-right: 2em;
 }
 
 #nav-bar .logo {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   float: left;
+  margin: 5px;
 }
 
 #nav-bar .header {
@@ -17,6 +18,7 @@
   line-height: 2.5;
   float: left;
   margin-left: 10px;
+  margin-top: 15px;
 
 }
 
@@ -25,11 +27,10 @@ button.compose:hover {
 }
 
 button.compose {
-  opacity: 0.8;
-  margin-top: 15px;
-  background-color: white;
+  opacity: 0.9;
+  margin-top: 25px;
+  background-color: #FFD700;
   border: none;
-  color: #00a087;
   padding: 15px 15px;
   text-align: center;
   text-decoration: none;
@@ -42,7 +43,6 @@ button img {
   width: 20px;
   height: 20px;
 }
-
 
 
 
