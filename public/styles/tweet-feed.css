@@ -5,14 +5,12 @@ article.tweet:hover {
 article.tweet:hover:after {
 }
 
-
 article.tweet {
   border-radius: 5px;
   border: 1px solid #aaa;
   margin-top: 10px;
   opacity: 0.6;
 }
-
 
 article.tweet header {
   background-color: #eee;
