@@ -18,6 +18,7 @@ main.container {
 
 .new-tweet h2 {
   margin-top: 0;
+  color: #7BBAEA;
   border-bottom: 1px solid;
 }
 
@@ -43,3 +44,4 @@ main.container {
   color: red;
   text-align: right;
   float: right;
+}
