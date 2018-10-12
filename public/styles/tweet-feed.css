@@ -29,7 +29,7 @@ article.tweet h2 {
 
 article.tweet h5 {
   color: #aaa;
-  font-size: 10px;
+  font-size: 12px;
   display: inline;
   padding-left: 7px;
   float: right;
@@ -42,7 +42,7 @@ article.tweet footer {
 }
 
 article.tweet footer p {
-  font-size: 11px;
+  font-size: 12px;
   margin: 0px;
 }
 
