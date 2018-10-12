@@ -1,5 +1,5 @@
 $(function() {
-  
+
   //==Creating New Tweets
   function createTweetElement(tweetData) {
     const user = tweetData.user;
@@ -25,7 +25,7 @@ $(function() {
     $footerIcons.append("<i class='fa fa-heart-o'</i>")
     $footerIcons.append("<i class='fa fa-flag-o'></i>")
     $footer.append($footerIcons);
-    
+
     let $footerDate = $("<p>").addClass("tweetDate").text(moment(tweetData.created_at).fromNow());
     $footer.append($footerDate)
 
@@ -78,10 +78,11 @@ $(function() {
      $("textarea[name='text']").val("");
     }
   });
-});
 
-//Toggle New Tweet Section when Compose Button Pressed
-$("button").on("click", function() {
-  $(".new-tweet").slideToggle();
-  $("textarea").focus();
+  //Toggle New Tweet Section when Compose Button Pressed
+  $("button").on("click", function() {
+    $(".new-tweet").slideToggle();
+    $("textarea").focus();
+  });
+
 });
