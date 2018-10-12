@@ -20,3 +20,26 @@
 
 }
 
+button.compose:hover {
+  opacity: 1.0;
+}
+
+button.compose {
+  opacity: 0.8;
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  color: #00a087;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  float: right;
+  font-size: 18px;
+}
+
+
+
+
+
+
