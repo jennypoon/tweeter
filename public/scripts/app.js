@@ -30,7 +30,7 @@ $(function() {
     $footer.append($footerIcons);
 
 
-    let $footerDate = $("<p>").addClass("tweetDate").text("Posted " + postAge(tweetData.created_at) + " days ago");
+    let $footerDate = $("<p>").addClass("tweetDate").text(moment(tweetData.created_at).fromNow());
 
     $footer.append($footerDate)
 
