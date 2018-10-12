@@ -2,7 +2,8 @@ article.tweet:hover {
   opacity: 1.0;
 }
 
-article.tweet:hover:after {
+article.tweet:hover .footer-icons {
+  display: block;
 }
 
 article.tweet {
@@ -63,6 +64,18 @@ border-radius: 5px;
   color: white;
   text-align: center;
   font-style: italic;
-
-
 }
+
+.footer-icons {
+  float: right;
+  padding: 5px;
+  font-size: 15px;
+  display: none;
+}
+
+span i {
+  padding: 2px;
+}
+
+
+
