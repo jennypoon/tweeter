@@ -1,6 +1,5 @@
-
 $(function() {
-
+  
   //==Creating New Tweets
   function createTweetElement(tweetData) {
     const user = tweetData.user;
@@ -18,8 +17,6 @@ $(function() {
     //create body
     let $tweetBody = $("<p>").addClass("tweetBody").text(tweetData.content.text);
 
-
-
     //create footer
     let $footer = $("<footer>")
 
@@ -28,25 +25,13 @@ $(function() {
     $footerIcons.append("<i class='fa fa-heart-o'</i>")
     $footerIcons.append("<i class='fa fa-flag-o'></i>")
     $footer.append($footerIcons);
-
-
+    
     let $footerDate = $("<p>").addClass("tweetDate").text(moment(tweetData.created_at).fromNow());
-
     $footer.append($footerDate)
 
     //append pieces
     return $tweet.append($header).append($tweetBody).append($footer);
-
   };
-  //==Convert Date to reflect age of post
-  function postAge(date) {
-    let todayDate = new Date();
-    let postDate = new Date(date);
-    var timeInMiliSec = postDate.getTime() - todayDate.getTime()
-    let postedAge = Math.abs(Math.ceil(timeInMiliSec / (1000 * 60 * 60 * 24)))
-    return postedAge;
-  }
-
 
   //==Loops through database to create tweets
   function renderTweets(tweets) {
@@ -67,7 +52,7 @@ $(function() {
   }
   loadTweets();
 
-//Binding to Submit
+  //Binding to Submit Event
   $('form').on('submit', (event) => {
     event.preventDefault();
 
@@ -75,32 +60,28 @@ $(function() {
     let input = event.target.children[0].value;
     let data = $(event.target).serialize();
 
+    //Actions of New Tweets
     if (input.length >= 140) {
       $('.error-msg').slideDown().html('Error - Over Character Limit');
     } else if (input.length === 0) {
       $('.error-msg').slideDown().html('Error - No Input');
     } else {
     $('.error-msg').slideUp().html('Error - No Input')
-      //Ajax Request
-      $.ajax('/tweets', {
+    //Ajax Request
+    $.ajax('/tweets', {
         method: 'POST',
         data: data,
         success: function(tweets) {
           loadTweets(tweets)
         }
-        });
-      $("textarea[name='text']").val("");
-      // $(".counter").text(140);
-        console.log("ajax POST went through!");
+     });
+     $("textarea[name='text']").val("");
     }
   });
 });
+
 //Toggle New Tweet Section when Compose Button Pressed
 $("button").on("click", function() {
   $(".new-tweet").slideToggle();
   $("textarea").focus();
 });
-
-// $("article.tweet").on("hover", function()  {
-//   $("footer").append(".icon")
-// });
