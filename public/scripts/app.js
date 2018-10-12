@@ -20,13 +20,22 @@ $(function() {
 
     //create footer
     let $footer = $("<footer>")
-    let $footerDate = $("<p>").addClass("tweetDate").append(tweetData.created_at);
+    let $footerDate = $("<p>").addClass("tweetDate").text("Posted " + postAge(tweetData.created_at) + " days ago");
     $footer.append($footerDate);
 
     //append pieces
     return $tweet.append($header).append($tweetBody).append($footer);
 
   };
+  //==Convert Date to reflect age of post
+  function postAge(date) {
+    let todayDate = new Date();
+    let postDate = new Date(date);
+    var timeInMiliSec = postDate.getTime() - todayDate.getTime()
+    let postedAge = Math.abs(Math.ceil(timeInMiliSec / (1000 * 60 * 60 * 24)))
+    return postedAge;
+  }
+
 
   //==Loops through database to create tweets
   function renderTweets(tweets) {
