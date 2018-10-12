@@ -12,16 +12,27 @@ $(function() {
     let $header = $("<header>");
     let $headerAvatar = $(`<img src="${user.avatars.small}">`).addClass("avatar");
     let $headerUsername = $("<h2>").addClass("username").text(user.name);
-    let $headerSpan = $("<h5>").addClass("handle").text(user.handle);
-    $header.append($headerAvatar).append($headerUsername).append($headerSpan);
+    let $headerHandle = $("<h5>").addClass("handle").text(user.handle);
+    $header.append($headerAvatar).append($headerUsername).append($headerHandle);
 
     //create body
     let $tweetBody = $("<p>").addClass("tweetBody").text(tweetData.content.text);
 
+
+
     //create footer
     let $footer = $("<footer>")
+
+    let $footerIcons = $("<span>").attr("class", "footer-icons");
+    $footerIcons.append("<i class='fa fa-retweet'></i>")
+    $footerIcons.append("<i class='fa fa-heart-o'</i>")
+    $footerIcons.append("<i class='fa fa-flag-o'></i>")
+    $footer.append($footerIcons);
+
+
     let $footerDate = $("<p>").addClass("tweetDate").text("Posted " + postAge(tweetData.created_at) + " days ago");
-    $footer.append($footerDate);
+
+    $footer.append($footerDate)
 
     //append pieces
     return $tweet.append($header).append($tweetBody).append($footer);
@@ -90,3 +101,6 @@ $("button").on("click", function() {
   $("textarea").focus();
 });
 
+// $("article.tweet").on("hover", function()  {
+//   $("footer").append(".icon")
+// });
