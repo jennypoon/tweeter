@@ -5,7 +5,7 @@ $(document).ready(function() {
     if (currentVal >= 0) {
       $(counterElm).text(currentVal).removeClass('countertxtover');
     } else {
-      $(counterElm).text(currentVal).addClass('countertxtover')
+      $(counterElm).text(currentVal).addClass('countertxtover');
     }
   });
 });
