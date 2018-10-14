@@ -18,16 +18,16 @@ $(function() {
     let $tweetBody = $("<p>").addClass("tweetBody").text(tweetData.content.text);
 
     //create footer
-    let $footer = $("<footer>")
+    let $footer = $("<footer>");
 
     let $footerIcons = $("<span>").attr("class", "footer-icons");
-    $footerIcons.append("<i class='fa fa-retweet'></i>")
-    $footerIcons.append("<i class='fa fa-heart-o'</i>")
-    $footerIcons.append("<i class='fa fa-flag-o'></i>")
+    $footerIcons.append("<i class='fa fa-retweet'></i>");
+    $footerIcons.append("<i class='fa fa-heart-o'</i>");
+    $footerIcons.append("<i class='fa fa-flag-o'></i>");
     $footer.append($footerIcons);
 
     let $footerDate = $("<p>").addClass("tweetDate").text(moment(tweetData.created_at).fromNow());
-    $footer.append($footerDate)
+    $footer.append($footerDate);
 
     //append pieces
     return $tweet.append($header).append($tweetBody).append($footer);
@@ -66,13 +66,13 @@ $(function() {
     } else if (input.length === 0) {
       $('.error-msg').slideDown().html('Error - No Input');
     } else {
-    $('.error-msg').slideUp().html('Error - No Input')
+    $('.error-msg').slideUp().html('Error - No Input');
     //Ajax Request
     $.ajax('/tweets', {
         method: 'POST',
         data: data,
         success: function(tweets) {
-          loadTweets(tweets)
+          loadTweets(tweets);
         }
      });
      $("textarea[name='text']").val("");
