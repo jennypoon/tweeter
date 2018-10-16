@@ -74,10 +74,12 @@ $(function() {
         success: function(tweets) {
           loadTweets(tweets);
         }
-     });
-     $("textarea[name='text']").val("");
-    }
-  });
+     }).then(() => {
+     $("textarea[name='text']").val("")
+     $(".counter").text(140);
+    })
+  };
+});
 
   //Toggle New Tweet Section when Compose Button Pressed
   $("button").on("click", function() {
