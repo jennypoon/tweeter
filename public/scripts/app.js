@@ -21,13 +21,10 @@ $(function() {
     let $footer = $("<footer>");
 
     let $footerIcons = $("<span>").attr("class", "footer-icons");
-<<<<<<< HEAD
-    $footerIcons.append("<i class='fa fa-heart-o'</i>");
-    $footerIcons.append("<i class='fa fa-retweet'></i>");
-=======
+
+
     $footerIcons.append("<i class='fa fa-retweet'></i>");
     $footerIcons.append("<i class='fa fa-heart-o'</i>");
->>>>>>> ec5e3de1f85c2d9253512e221f1e634059f122e7
     $footerIcons.append("<i class='fa fa-flag-o'></i>");
     $footer.append($footerIcons);
 
