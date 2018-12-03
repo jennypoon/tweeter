@@ -27,11 +27,15 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.use("/tweets", tweetsRoutes);
 
 
-  app.listen(PORT, () => {
-  console.log("Example app listening on port " + PORT);
+  app.listen(process.env.PORT || 8080, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
   });
 
+
 });
+
+
+
 
 
 
