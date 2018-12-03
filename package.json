@@ -17,7 +17,5 @@
     "md5": "^2.1.0",
     "mongodb": "^2.2.36"
   },
-  "devDependencies": {
-    "nodemon": "^1.9.2"
-  }
+  "devDependencies": {}
 }
