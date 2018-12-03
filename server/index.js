@@ -2,6 +2,8 @@
 
 // Basic express setup:
 
+require('dotenv').config();
+const PORT          = process.env.PORT || 8080;
 const express       = require("express");
 const bodyParser    = require("body-parser");
 const app           = express();
@@ -26,15 +28,11 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
   app.use("/tweets", tweetsRoutes);
 
 
-  app.listen(process.env.PORT || 8080, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  app.listen(PORT, () => {
+  console.log("Example app listening on port " + PORT);
   });
 
-
 });
-
-
-
 
 
 
