@@ -1,0 +1,36 @@
+#nav-bar {
+  height: 120px;
+  background-color: #7BBAEA;
+  color: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em; }
+  #nav-bar .logo {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 5px; }
+  #nav-bar .header {
+    font-size: 200%;
+    line-height: 2.5;
+    float: left;
+    margin-left: 10px;
+    margin-top: 15px; }
+
+button .compose:hover {
+  opacity: 1.0; }
+
+button .compose {
+  opacity: 0.9;
+  margin-top: 25px;
+  background-color: #FFD700;
+  border: none;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  float: right;
+  font-size: 18px; }
+
+button img {
+  width: 20px;
+  height: 20px; }
